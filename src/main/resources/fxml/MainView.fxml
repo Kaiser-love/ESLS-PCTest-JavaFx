@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="1082.0" spacing="10.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.datagroup.eslstest.controller.FxmlViewController">
+   <children>
+      <HBox maxHeight="40.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg" VBox.vgrow="NEVER">
+         <children>
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" text="路由器" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <ComboBox fx:id="routersComboBox" prefHeight="23.0" prefWidth="161.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox maxHeight="40.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg">
+         <children>
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" text="条码" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="barCodeText" />
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="23.0" prefWidth="264.0" text="例:111111111111(12位)" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox maxHeight="40.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg">
+         <children>
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" text="信道" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="channelIdText" />
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="23.0" prefWidth="152.0" text="例:0(0-8)" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox maxHeight="40.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg">
+         <children>
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" text="硬件版本号" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="hardVersionText" />
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="23.0" prefWidth="152.0" text="例:V1.00" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox maxHeight="40.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg">
+         <children>
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="40.0" prefWidth="160.0" text="外网IP" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="outNetIp" />
+            <Label alignment="CENTER" graphicTextGap="8.0" prefHeight="23.0" prefWidth="222.0" text="例:39.108.106.167" textAlignment="JUSTIFY">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox maxHeight="60.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg" VBox.vgrow="NEVER">
+         <children>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#sendAPWrite" prefHeight="40.0" prefWidth="160.0" text="AP信息写入" HBox.hgrow="ALWAYS">
+
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#sendAPRead" prefHeight="40.0" prefWidth="160.0" text="AP信息读取" HBox.hgrow="ALWAYS">
+
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#sendAPByChannelId" prefHeight="40.0" prefWidth="160.0" text="AP发送无线帧" HBox.hgrow="ALWAYS">
+
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#removeRouter" prefHeight="40.0" prefWidth="160.0" text="AP移除" />
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></HBox>
+      <HBox maxHeight="60.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg">
+         <children>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#sendAPStopByChannelId" prefHeight="40.0" prefWidth="160.0" text="AP停止发送无线帧" HBox.hgrow="ALWAYS">
+            </Button>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#sendAPReceiveByChannelId" prefHeight="40.0" prefWidth="160.0" text="AP接收无线帧" HBox.hgrow="ALWAYS" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#sendAPReceiveStopByChannelId" prefHeight="40.0" prefWidth="160.0" text="AP停止接收无线帧" HBox.hgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox maxHeight="60.0" prefHeight="60.0" prefWidth="1200.0" spacing="10.0" styleClass="bg">
+         <children>
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#setLocalhostIp" prefHeight="40.0" prefWidth="160.0" text="设置远程服务器IP" HBox.hgrow="ALWAYS" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#deleteIpRecord" prefHeight="40.0" prefWidth="160.0" text="删除当前历史连接IP记录" HBox.hgrow="ALWAYS" />
+            <Button maxWidth="Infinity" mnemonicParsing="false" onAction="#getIpRecord" prefHeight="40.0" prefWidth="160.0" text="查询历史连接IP列表" HBox.hgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox maxHeight="700.0" prefHeight="700" prefWidth="1200.0" spacing="10.0" styleClass="bg">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <TextArea fx:id="resultTextArea" prefHeight="200.0" prefWidth="1070.0" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>
